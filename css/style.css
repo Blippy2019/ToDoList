@@ -1,0 +1,493 @@
+/* ------------ youtube.com/CodeExplained ------------ */
+body{
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0,0,0,0.1);
+    font-family: sans-serif;
+}
+
+/* ------------ container ------------ */
+.container{
+    padding:20px;
+    width:400px;
+    margin:0 auto;
+}
+
+/* ------------ header ------------ */
+#header{
+    width: 400px;
+    height:175px;
+    background-image: url('img/Green.svg');
+    background-repeat: no-repeat;
+    border-radius: 15px 15px 0 0;
+    position: relative;
+}
+.clear{
+    width : 30px;
+    height: 30px;
+    position: absolute;
+    left:20px;
+    top: 20px;
+}
+.clear i{
+    display:inline-block;
+    font-size: 30px;
+    color: #FFF;
+}
+.clear i:hover{
+    cursor: pointer;
+    text-shadow: 1px 3px 5px #000;
+}
+
+.fa.fa-trash-o {
+    position:absolute;
+    font-size:35px;
+    padding:0;
+    left:67px;
+    color:white;
+    top:20px;
+}
+
+.fa-trash-o:hover{
+    cursor: pointer;
+    text-shadow: 1px 3px 5px #000;
+}
+
+.clear .fa-clone {
+    position:absolute;
+    top:2px;
+}
+
+#date{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    color: #FFF;
+    font-size: 25px;
+}
+
+/* ------------ dropdown ------------ */
+.dropdown-content {
+    display:none;
+    position:absolute;
+    background-color:#FFF;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius:5px;
+    z-index:90;
+    width:150px;
+    padding:10px 0px;
+    top:30px;
+}
+
+.clear:hover .dropdown-content {
+    display:block;
+    display:flex;
+    justify-content: space-between;
+    padding:10px;
+}
+
+.button.selected {
+  border:3px solid lightgray;
+}
+
+.dropdown-content button {
+    padding: 12px 16px;
+    display: inline-block;
+    border-radius:50%;
+    height:40px;
+    width:40px;
+    border:none;
+}
+
+.dropdown-content button:hover{
+    cursor: pointer;
+    border:3px solid gray;
+}
+
+/* ------------ navigation ------------ */
+
+nav {
+    display:flex;
+    justify-content: space-between;
+    }
+
+.navigation {
+    background-color:#FFF;
+    text-align:center;
+    display:inline-block;
+    padding:8px 16px;
+    font-size:1.5em;
+    width:50%;
+    color:#41a591;
+    border-bottom:2px solid lightgray;
+}
+
+.navigation:hover {
+    cursor: pointer;
+    background-color:lightgray;
+    color:#41a591;
+}
+
+.navigation.active {
+    border-bottom:2px solid #41a591;
+    background-color:#FFF !important;
+}
+
+/* ------------ content ------------ */
+.content{
+    background-color: #FFF;
+    overflow: auto;
+    height:53vh;
+}
+.content::-webkit-scrollbar { 
+    display: none; 
+}
+.content ul{
+    padding:0;
+    margin:0;
+}
+.item{
+    width:370px;
+    height: 45px;
+    min-height: 45px;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 0;
+    margin: 10px 15px;
+    background-color:#F1F1F1;
+    border-radius:5px;
+    
+}
+
+.item i.co{
+    position: absolute;
+    font-size: 25px;
+    padding-left:5px;
+    left:15px;
+    top:10px;
+}
+.item i.co:hover{
+    cursor: pointer;
+}
+
+.item p.text{
+    position: absolute;
+    margin:0;
+    font-size: 20px;
+    left:60px;
+    top:5px;
+    max-width:300px;
+    margin-top:5px;
+}
+
+.item p.date{
+    position: absolute;
+    margin:0;
+    font-size: 16px;
+    top:8px;
+    max-width:285px;
+    margin-top:5px;
+    right:50px;
+}
+
+.lineThrough{
+    text-decoration: line-through;
+}
+.item i.de{
+    position: absolute;
+    font-size: 30px;
+    right:15px;
+    top:8px;
+}
+.item i.de:hover{
+    color:#af0000;
+    cursor: pointer;
+}
+
+.fa-caret-down {
+    margin-top: 5px;
+    color:black;
+    font-size: 35px !important;
+    margin-left: 22px;      
+}
+
+.fa-caret-up {
+    color:black;
+    font-size: 35px !important;
+    margin-left: 22px;      
+}
+
+.sublist-item {
+    width:370px;
+    height: 30px;
+    position: relative;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 0;
+    border-radius:5px;
+    margin-top: 4px;
+}
+
+.fa-square-o {
+    font-size: 18px !important;
+    margin-top: 7px;
+    margin-left: 25px;
+}
+
+.fa-check-square-o {
+    font-size: 18px !important;
+    margin-top: 7px;
+    margin-left: 25px;
+}
+
+.sublist-item p{
+    font-size: 18px !important;
+    margin-top:0!important;
+}
+
+/* ------------ add item ------------ */
+#add-to-do{
+    cursor: pointer;
+    position: relative;
+    width: 380px;
+    height:45px;
+    background-color: #FFF;
+    padding: 10px;
+    border-top:2px solid lightgray;
+    border-radius: 0 0 15px 15px;
+}
+
+#add-to-do:hover{
+    background-color:WhiteSmoke;
+}
+
+#add-to-do i{
+    font-fa:sans-serif;
+    position: absolute;
+    font-size: 50px;
+    color: #41a591;
+    padding-left:10px;
+}
+
+#add-to-do div{
+    position: absolute;
+    font-size: 40px;
+    color: #41a591;
+    left:85px;
+}
+
+/* ------------ Add Task Form ------------ */
+
+.modal {
+    display:none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    height:380px;
+    position:relative;
+}
+
+.modal-content #name{
+    color:gray;
+    height: 35px;
+    width: 290px;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    padding-left:10px;
+}
+
+#subtasks{
+    margin-top:3px;
+}
+
+.modal-content #subtaskInput{
+    position:absolute;
+    color:gray;
+    height: 40px;
+    width: 280px;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    padding-left:10px;
+    bottom: 170px;
+    overflow:hidden;
+}
+
+.subtaskproto{
+    width:230px;
+    min-height: 15px;
+    list-style: none;
+}
+
+i:hover{
+    cursor:pointer;
+}
+
+.colour {
+    position:absolute;
+    bottom: 130px;
+    color:gray;
+    font-size:1.3em;
+}
+
+#colourSelect {
+    padding-bottom:7px;
+    display: inline-block;
+    border-radius:50%;
+    height:34px;
+    width:34px;
+    border:2px solid gray;
+    background-color:rgb(241, 241, 241);
+}
+
+#colourSelect:hover {
+    cursor:pointer;
+}
+
+#AddTask {
+    color:white;
+    background-color:#41a591;
+    border:none;
+    border-radius:5px;
+    padding:5px 10px;
+    display:inline-block;
+    position:absolute;
+    bottom:15px;
+    left:10px;
+}
+
+#AddTask:hover {
+    cursor:pointer;
+}
+
+#CancelTask {
+    color:white;
+    background-color:#41a591;
+    border:none;
+    padding:5px 10px;
+    border-radius:5px;
+    display:inline-block;
+    position:absolute;
+    bottom:15px;
+    right:20px;
+}
+
+#CancelTask:hover {
+    cursor:pointer;
+}
+
+
+#duedate {
+    color:gray;
+    border:none;
+    font-size:1.3em;
+    width:180px;
+}
+
+.due {
+    font-size:1.3em;
+    position:absolute;
+    bottom:90px;
+}
+
+.recurring {
+    font-size:1.3em;
+    color:gray;
+    bottom: 55px;
+    position:absolute;
+}
+
+#confirmRecur {
+    position: absolute;
+    top: -3px;
+    left: 130px;
+    height: 23px;
+    width: 23px;
+    background-color: #eee;
+}
+
+#recurFrequency{
+    position: absolute;
+    width:80px;
+    color:gray;
+    font-size:0.9em;
+    margin-left:10px;
+    border:none;
+    left:160px;
+}
+
+.fa-question-circle {
+    position:absolute;
+    left:260px;
+    font-size:120%!important;
+}
+
+#tooltiptext {
+    margin-top:-40px;
+    width: 180px;
+    height:100px;
+    background-color: WhiteSmoke;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    position:absolute;
+    left:330px;
+    font-size:65%;
+}
+
+input[type=date]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+}
+
+.mdl-textfield:not(.is-dirty) input::-webkit-datetime-edit {
+     display:none;
+}
+
+#ConfirmDeleteAll {
+    color:white;
+    background-color:#41a591;
+    border:none;
+    border-radius:5px;
+    padding:5px 10px;
+    display:inline-block;
+    position:absolute;
+    bottom:15px;
+    left:10px;
+}
+
+#CancelDelete {
+    color:white;
+    background-color:#41a591;
+    border:none;
+    padding:5px 10px;
+    border-radius:5px;
+    display:inline-block;
+    position:absolute;
+    bottom:15px;
+    right:20px;
+}
+
+.hidden {
+    display:none;
+}
+
+.fa-times {
+    position:absolute;
+    right:25px;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title> To Do </title>
+    <link href="css/style.css" rel=stylesheet>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="js/script.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="css/img/icon.png"/>
+
+
+</head>
+
+<body>
+    <div class = "container">
+        <div id="header">
+            <div class="clear">
+                <i class="fa fa-clone"></i>
+                <div class="dropdown-content">
+                    <button class="button" id="green"style="background-color:#b0ffeeff;" onclick="Background('green')"></button>
+                    <button class="button"id="blue"style="background-color:#6ca7ffff;" onclick="Background('blue')"></button>
+                    <button class="button" id="purple"style="background-color:#b88ff6ff;" onclick="Background('purple')"></button>
+                </div>
+            </div>
+            <i class="fa fa-trash-o" aria-hidden="true" id="IconDeleteAll"></i>
+            <div id="date">Day Mon Date</div>
+        </div>
+        <nav>
+            <div class="navigation active" id="ToDo">To Do</div>
+            <div class="navigation" id="Completed">Completed</div>
+        </nav>
+        <div class="content">
+            <ul id="list"></ul>
+            <ul id="completed" style="display:none;"></ul>
+        </div>
+        <div id="add-to-do">
+            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+            <div style="font-family:sans-serif;display:inline">Add a new task</div>
+        </div>
+        <div class="modal" id="CreateTask">
+            <div class="modal-content">
+                <input type="text" id="name" placeholder="Name of Task" maxlength="20" autocomplete="off"></input>
+                <ul id="subtasks"></ul>
+                <textarea type="text" id="subtaskInput" placeholder="Add a subtask:" maxlength="45" autocomplete="off" style="resize:none" rows="2"></textarea>
+                <div class="colour">
+                    Task Colour:  <button id="colourSelect"></button>
+                </div>
+                <div style="color:gray; margin-top:5px;padding-top:5px;border-top:2px solid lightgray;width:300px;" class="due">
+                    Due date: <input type="date" id="duedate"></input>
+                </div>
+                <div class="recurring">
+                    Repeat task? <input type="checkbox" id="confirmRecur"></input>
+                    <input type="number" id="recurFrequency" min="0" style="display:none"></input>
+                    <i class="fa fa-question-circle" aria-hidden="true" id="recurInfo" style="display:none"></i> 
+                    <span id="tooltiptext" style="display:none">Recurring tasks will appear again after you complete one. Recurring tasks must have a due date. Input is automatically set to 7, which means the task is weekly.</span>
+                </div>
+                <button id="AddTask"> Add task </button>
+                <button id="CancelTask"> Cancel </button>
+            </div>
+        </div>
+        <div class="modal" id="DeleteAllConfirmation">
+            <div class="modal-content" style="height:150px;top:10%;" >
+                <p>You are about to Thanos snap all your tasks, even your already deleted ones! Are you sure?</p>
+                <button id="CancelDelete"> Go back </button>
+                <button id="ConfirmDeleteAll"> Yes, Thanos snap them </button>
+            </div
+        </div
+    </div>
+</body>
+</html>
